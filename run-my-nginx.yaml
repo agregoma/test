@@ -5,15 +5,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: my-nginx
-  replicas: 2
+      app: my-nginx
+  replicas: 4 # Update the replicas from 2 to 4
   template:
     metadata:
       labels:
-        run: my-nginx
+        app: my-nginx
     spec:
       containers:
-      - name: my-nginx
+      - name: nginx
         image: nginx:1.16.1
         ports:
         - containerPort: 80
